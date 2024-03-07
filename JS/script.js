@@ -57,8 +57,9 @@ var wheelEntryTemplate = document.querySelector("#wheelEntryTemplate");
 
 var menuCheckbox = document.querySelector("#menuCheckbox");
 
-// var theme = ["#f4d35e", "#ee964b", "#f95738"];
+// ------------------------ colors in the wheel ------------------------ 
 var theme = ["#ffbe0b", "#fb5607", "#ff006e", "#3a86ff"];
+// ------------------------ ------------------------ ------------------------ 
 
 var currentWheelName;
 var wheel;
@@ -165,13 +166,15 @@ function getSavedWheels() {
 	}
 }
 
+// ------------------------ wheel content ------------------------ 
 function getDefaultWheels() {
 	return {
-		"Wheel of Fortune": [
-			"$100", "$20", "$20", "$50", "$20", "$20", "Spin again"
+		"Wheel of Resala": [
+			"100", "70", "10", "40", "20", "10", "10"
 		]
 	}
 }
+// ------------------------ ------------------------ ------------------------ 
 
 function gotoCreatePage(wheelName) {
 	clearChildren(entryList);
@@ -366,3 +369,20 @@ function clearChildren(parent) {
 		parent.removeChild(parent.lastChild);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------ Hamburger menu animated ------------------------ 
+function toggleSwitch(x) {
+	x.classList.toggle("change");
+}
+// ------------------------ ------------------------ ------------------------ 

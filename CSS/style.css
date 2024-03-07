@@ -1,3 +1,7 @@
+/* ------------------------------------------------------------- */
+/* -------------------------- general -------------------------- */
+/* ------------------------------------------------------------- */
+
 .hidden {
 	display: none !important;
 }
@@ -11,12 +15,13 @@
 body,
 html {
 	background: var(--background);
+	cursor:context-menu
 }
 
 body {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
-	/*   overflow: hidden; */
+	/* overflow: hidden; */
 }
 
 .title {
@@ -44,20 +49,29 @@ body {
 }
 
 #wheelNameDisplay {
-	font-size: 30px;
+	font-size: 35px;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin-top: 50px;
+	margin: 50px 0 15px;
 	color: #bbb;
 }
 
 #landingEntry {
 	font-size: 50px;
 	font-weight: bold;
+	animation: happy 3s linear infinite;
+}
+
+@keyframes happy {
+	0% {color: red;}
+	25% {color: blue;}
+	75% {color: white;}
+	100% {color: red;}
 }
 
 #wheelContainer {
 	width: 100%;
-	margin: 10px;
+	/* margin: 10px; */
 
 	display: flex;
 	justify-content: center;
@@ -74,33 +88,17 @@ body {
 	color: #333;
 }
 
-/* #spin {
-    width: 8em;
-    height: 3em;
-    
-    border: 3px solid red;
-    border-radius: 10px;
-    
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  #spin:active {
-    background: gray;
-    border: none;
-  } */
-
 #edit {
 	background: none;
-	color: white;
+    color: white;
 
-	border: 2px solid white;
-	border-radius: 7px;
-	
-	margin-top: 30px;
-	padding: 3px 10px;
-	cursor: pointer;
-}
+    border: 2px solid white;
+    border-radius: 7px;
+
+    margin-top: 20px;
+    padding: 3px 10px;
+    cursor: pointer;
+    font-size: 20px;}
 
 #createPage {
 	display: flex;
@@ -202,9 +200,9 @@ body {
 	color: white;
 	background: none;
 
-	font-size: 30px;
+	font-size: 42px;
 	font-weight: bold;
-	letter-spacing: 3px;
+	letter-spacing: 5px;
 
 	width: 150px;
 	height: 70px;
@@ -220,22 +218,27 @@ body {
 	color: var(--background);
 }
 
+/* --------------------------------------------------------------- */
+/* -------------------------- side menu -------------------------- */
+/* --------------------------------------------------------------- */
+
+/* -------------------------- hamburger icon */
+/* -------------------------- */
 .openMenu {
 	position: fixed;
 	top: 20px;
 	left: 20px;
-	width: 50px;
-	height: 50px;
+	width: 45px;
+	height: 45px;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	z-index: 2;
-
 	cursor: pointer;
-	border: 2px solid white;
-	background: var(--background);
+	border: 3px solid white;
+	border-radius: 20px;
+	background-color: var(--background);
 }
 
 .openMenu .bars {
@@ -250,8 +253,10 @@ body {
 	background: white;
 	width: 100%;
 	height: 13%;
-	display: flex;
 }
+
+/* -------------------------- */
+/* -------------------------- -------------------------- */
 
 #menuCheckbox {
 	display: none;
@@ -261,32 +266,62 @@ body {
 	left: 0;
 }
 
+/* -------------------------- side bar */
+/* -------------------------- */
+
+/* container */
 .menu {
+	position: fixed;
+	box-sizing: border-box;
 	top: 0;
 	bottom: 0;
 	left: -280px;
 	width: 280px;
-	padding: 20px;
-	padding-top: 100px;
-	box-sizing: border-box;
-	position: fixed;
 
-	background: var(--blue);
+	z-index: 1;
+
+	padding: 100px 20px 20px;
+
+	backdrop-filter: blur(100px);
+
 	color: white;
 
-	transition: left 0.2s;
+	transition: 0.5s;
 }
 
+@media (max-width: 500px)
+{
+	.menu{
+		left: -230px;
+		width: 230px;
+	
+	}
+}
+
+/* close button ==> X */
+.menu .closebtn {
+	position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 35px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.menu p{
+	font-size: 40px;
+	font-weight: bold;
+}
+/* content container */
 #wheelsList {
 	word-break: break-word;
 
 	list-style-type: none;
 	padding-left: 0;
-	margin: 0;
 }
 
 .wheelEntryContainer {
-	padding: 10px 0;
+	padding: 12px 0;
 	border-bottom: 1px solid white;
 }
 
@@ -295,8 +330,15 @@ body {
 }
 
 .wheelEntry:hover {
-	text-decoration: underline;
+	border-left: 4px solid;
+    border-radius: 15px;
+    padding: 5px 15px;
+
+	transition:  0.3s;
 }
+
+/* -------------------------- */
+/* -------------------------- -------------------------- */
 
 .errorPopupContainer {
 	position: fixed;
