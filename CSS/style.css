@@ -1,0 +1,350 @@
+.hidden {
+	display: none !important;
+}
+
+:root {
+	--background: #5924a3;
+	--blue: #3a86ff;
+	--red: #ff3333;
+}
+
+body,
+html {
+	background: var(--background);
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	/*   overflow: hidden; */
+}
+
+.title {
+	font-size: 50px;
+	font-weight: bold;
+	margin-top: 70px;
+	margin-bottom: 40px;
+}
+
+#wheelPage {
+	width: 100%;
+	padding-top: 30px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	color: white;
+}
+
+#wheelNameDisplay {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #bbb;
+}
+
+#landingEntry {
+	font-size: 50px;
+	font-weight: bold;
+}
+
+#wheelContainer {
+	width: 100%;
+	margin: 10px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.entryText {
+	font-size: 20px;
+	color: #333;
+}
+
+/* #spin {
+    width: 8em;
+    height: 3em;
+    
+    border: 3px solid red;
+    border-radius: 10px;
+    
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  #spin:active {
+    background: gray;
+    border: none;
+  } */
+
+#edit {
+	background: none;
+	color: white;
+
+	border: 2px solid white;
+	border-radius: 7px;
+	
+	margin-top: 30px;
+	padding: 3px 10px;
+	cursor: pointer;
+}
+
+#createPage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	color: white;
+
+	padding-bottom: 40px;
+}
+
+#createPage .settings {
+	width: calc(100% - 40px);
+	max-width: 500px;
+}
+
+#wheelName {
+	padding: 10px;
+}
+
+#createPage hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 1px solid white;
+}
+
+.entryItem {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 30px;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.entryItem .entryText {
+	height: 100%;
+	padding: 10px;
+
+	flex-grow: 1;
+	margin-right: 20px;
+	box-sizing: border-box;
+
+	border-radius: 10px;
+	border: none;
+	outline: none;
+
+	font-size: 20px;
+}
+
+.entryItem .entryText:focus {
+	border: 2px solid black;
+}
+
+.entryItem .remove,
+#addEntry {
+	padding: 0;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	flex-shrink: 0;
+
+	border-radius: 50%;
+	border: none;
+	background: red;
+	color: white;
+
+	font-size: 20px;
+
+	text-align: center;
+	vertical-align: middle;
+
+	cursor: pointer;
+}
+
+#addEntry {
+	font-size: 30px;
+	background: var(--blue);
+	position: relative;
+}
+
+#addEntry:hover:after,
+.entryItem .remove:hover:after {
+	content: "";
+	background: rgba(0, 0, 0, 0.3);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-radius: 50%;
+	position: absolute;
+}
+
+#createWheelButton,
+#spin {
+	border: 5px solid white;
+	border-radius: 15px;
+
+	color: white;
+	background: none;
+
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 3px;
+
+	width: 150px;
+	height: 70px;
+
+	text-align: center;
+	cursor: pointer;
+}
+
+#createWheelButton:hover,
+#spin:hover,
+#edit:hover {
+	background: white;
+	color: var(--background);
+}
+
+.openMenu {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	width: 50px;
+	height: 50px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	z-index: 2;
+
+	cursor: pointer;
+	border: 2px solid white;
+	background: var(--background);
+}
+
+.openMenu .bars {
+	width: 70%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.openMenu .bars div {
+	background: white;
+	width: 100%;
+	height: 13%;
+	display: flex;
+}
+
+#menuCheckbox {
+	display: none;
+}
+
+#menuCheckbox:checked+.menu {
+	left: 0;
+}
+
+.menu {
+	top: 0;
+	bottom: 0;
+	left: -280px;
+	width: 280px;
+	padding: 20px;
+	padding-top: 100px;
+	box-sizing: border-box;
+	position: fixed;
+
+	background: var(--blue);
+	color: white;
+
+	transition: left 0.2s;
+}
+
+#wheelsList {
+	word-break: break-word;
+
+	list-style-type: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.wheelEntryContainer {
+	padding: 10px 0;
+	border-bottom: 1px solid white;
+}
+
+.wheelEntry {
+	cursor: pointer;
+}
+
+.wheelEntry:hover {
+	text-decoration: underline;
+}
+
+.errorPopupContainer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	height: 50px;
+
+	display: flex;
+	justify-content: center;
+
+	animation: errorPopupAnim 0.5s;
+}
+
+.errorPopup {
+	max-width: 100%;
+	width: 500px;
+	height: 100%;
+
+	border-radius: 5px;
+	background: var(--red);
+
+	color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.errorPopup .close {
+	color: white;
+	cursor: pointer;
+	font-size: 25px;
+}
+
+.errorPopup .close:hover {
+	text-decoration: underline;
+}
+
+@keyframes errorPopupAnim {
+	from {
+		bottom: -50px;
+	}
+
+	to {
+		bottom: 20px;
+	}
+}
