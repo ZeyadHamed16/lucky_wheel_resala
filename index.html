@@ -22,6 +22,33 @@
 </head>
 
 <body>
+  <!-- -------------------------------------------------------- -->
+  <!-- -------------------- hamburger icon -------------------- -->
+  <!-- -------------------------------------------------------- -->
+  <button class="openMenu" onclick="openNav()">
+    <div class="bars">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </button>
+
+  <!-- -------------------------------------------------------- -->
+  <!-- ----------------------- side Menu ----------------------- -->
+  <!-- -------------------------------------------------------- -->
+  <div id="sideMenu">
+    <div class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark fa-beat"></i></div>
+    <a href="https://www.facebook.com/Resalaalmahala" target="_blank">
+      <img src="Media/photos/Resala-noBackGround.png" alt="Resala_logo">
+    </a>
+    <p>Wheels</p>
+    <ul id="wheelsList">
+    </ul>
+  </div>
+
+  <!-- ------------------------------------------------------- -->
+  <!-- ------------------- main wheel tabe ------------------- -->
+  <!-- ------------------------------------------------------- -->
   <div class="hidden" id="wheelPage">
     <span id="wheelNameDisplay">Wheel name</span>
     <span id="landingEntry">Press 'Spin'</span>
@@ -33,12 +60,20 @@
     <button id="edit">Edit</button>
   </div>
 
+
+  <template id="wheelEntryTemplate">
+    <li class="wheelEntryContainer">
+      <span class="wheelEntry"></span>
+    </li>
+  </template>
+
+  <!-- ------------------------------------------------------- -->
+  <!-- ------------------ create wheel tabe ------------------ -->
+  <!-- ------------------------------------------------------- -->
   <div class="hidden" id="createPage">
     <span class="title">Create wheel</span>
-
     <div class="settings">
       <input placeholder="Wheel name" id="wheelName" />
-      <!--     <br> <span> Options </span> -->
       <hr>
       <div id="entryList">
       </div>
@@ -49,30 +84,6 @@
     <button id="createWheelButton">Create</button>
   </div>
 
-  <!-- ------------------ hamburger icon -->
-  <label for="menuCheckbox" class="openMenu">
-    <div class="bars">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </label>
-  <!-- ------------------ ------------------ -->
-
-  <input id="menuCheckbox" type="checkbox" />
-  <div class="menu">
-    <label for="menuCheckbox" class="closebtn"><i class="fa-solid fa-xmark fa-beat"></i></label>
-    <p>Wheels</p>
-    <ul id="wheelsList">
-    </ul>
-  </div>
-
-  <template id="wheelEntryTemplate">
-    <li class="wheelEntryContainer">
-      <span class="wheelEntry"></span>
-    </li>
-  </template>
-
   <template id="entryItemTemplate">
     <div class="entryItem">
       <input placeholder="Type something" class="entryText" />
@@ -80,6 +91,7 @@
     </div>
   </template>
 
+  <!-- ------------------ error bar in create wheel tabe -->
   <template id="errorTemplate">
     <div class="errorPopupContainer">
       <div class="errorPopup">
@@ -88,6 +100,14 @@
       </div>
     </div>
   </template>
+
+  <footer>
+    <div class="copyRight">
+      <p>Copyright © 2024 Resala ElMahalla. All rights reserved.</p>
+      Powered by <a href="https://zeyadhamed16.github.io/myCV/">Zeyad Hamed</a>
+    </div>
+  </footer>
+  
 </body>
 <script src="JS/script.js"></script>
 

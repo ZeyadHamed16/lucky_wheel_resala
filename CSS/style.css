@@ -15,7 +15,7 @@
 body,
 html {
 	background: var(--background);
-	cursor:context-menu
+	cursor: context-menu
 }
 
 body {
@@ -24,16 +24,145 @@ body {
 	/* overflow: hidden; */
 }
 
-.title {
-	font-size: 50px;
-	font-weight: bold;
-	margin-top: 70px;
-	margin-bottom: 40px;
+/* --------------------------------------------------------------- */
+/* -------------------------- side menu -------------------------- */
+/* --------------------------------------------------------------- */
+
+/* -------------------------- hamburger icon */
+/* -------------------------- */
+.openMenu {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	width: 45px;
+	height: 45px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+	border: 3px solid white;
+	border-radius: 20px;
+	background-color: var(--background);
 }
+
+.openMenu .bars {
+	width: 70%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.openMenu .bars div {
+	background: white;
+	width: 100%;
+	height: 13%;
+}
+
+/* -------------------------- */
+/* -------------------------- -------------------------- */
+
+/* -------------------------- side bar */
+/* -------------------------- */
+
+/* container */
+#sideMenu {
+	position: fixed;
+	box-sizing: border-box;
+	top: 0;
+	bottom: 0;
+	left: -280px;
+	width: 280px;
+
+	z-index: 1;
+
+	padding: 110px 20px 20px;
+
+	background-color: var(--blue);
+	color: white;
+
+	transition: 0.5s;
+}
+
+@media (max-width: 500px) {
+	#sideMenu {
+		left: -230px;
+		width: 230px;
+
+		background-color: transparent;
+		backdrop-filter: blur(100px);
+	}
+}
+
+/* close button ==> X */
+#sideMenu .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 35px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+/* resala logo */
+#sideMenu a img {
+	position: absolute;
+	top: 5px;
+	right: 70px;
+	width: 150px;
+}
+
+@media (max-width: 500px) {
+	#sideMenu a img {
+		right: 50px;
+	}
+}
+
+
+#sideMenu p {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+/* content container */
+#wheelsList {
+	word-break: break-word;
+
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.wheelEntryContainer {
+	padding: 12px 0;
+	border-bottom: 1px solid white;
+}
+
+.wheelEntry {
+	cursor: pointer;
+}
+
+.wheelEntry:hover {
+	border-left: 4px solid;
+	border-radius: 15px;
+	padding: 5px 15px;
+
+	transition: 0.3s;
+}
+
+/* -------------------------- */
+/* -------------------------- -------------------------- */
+
+
+/* ------------------------------------------------------- */
+/* ------------------- main wheel tabe ------------------- */
+/* ------------------------------------------------------- */
 
 #wheelPage {
 	width: 100%;
 	padding-top: 30px;
+	padding-bottom: 20px;
 
 	display: flex;
 	flex-direction: column;
@@ -63,15 +192,25 @@ body {
 }
 
 @keyframes happy {
-	0% {color: red;}
-	25% {color: blue;}
-	75% {color: white;}
-	100% {color: red;}
+	0% {
+		color: red;
+	}
+
+	25% {
+		color: blue;
+	}
+
+	75% {
+		color: white;
+	}
+
+	100% {
+		color: red;
+	}
 }
 
 #wheelContainer {
 	width: 100%;
-	/* margin: 10px; */
 
 	display: flex;
 	justify-content: center;
@@ -90,15 +229,20 @@ body {
 
 #edit {
 	background: none;
-    color: white;
+	color: white;
 
-    border: 2px solid white;
-    border-radius: 7px;
+	border: 2px solid white;
+	border-radius: 7px;
 
-    margin-top: 20px;
-    padding: 3px 10px;
-    cursor: pointer;
-    font-size: 20px;}
+	margin-top: 20px;
+	padding: 3px 10px;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+/* ------------------------------------------------------- */
+/* ------------------ create wheel tabe ------------------ */
+/* ------------------------------------------------------- */
 
 #createPage {
 	display: flex;
@@ -108,6 +252,13 @@ body {
 	color: white;
 
 	padding-bottom: 40px;
+}
+
+.title {
+	font-size: 45px;
+	font-weight: bold;
+	margin-top: 70px;
+	margin-bottom: 40px;
 }
 
 #createPage .settings {
@@ -146,7 +297,7 @@ body {
 	border: none;
 	outline: none;
 
-	font-size: 20px;
+	font-size: 15px;
 }
 
 .entryItem .entryText:focus {
@@ -204,9 +355,6 @@ body {
 	font-weight: bold;
 	letter-spacing: 5px;
 
-	width: 150px;
-	height: 70px;
-
 	text-align: center;
 	cursor: pointer;
 }
@@ -218,128 +366,8 @@ body {
 	color: var(--background);
 }
 
-/* --------------------------------------------------------------- */
-/* -------------------------- side menu -------------------------- */
-/* --------------------------------------------------------------- */
 
-/* -------------------------- hamburger icon */
-/* -------------------------- */
-.openMenu {
-	position: fixed;
-	top: 20px;
-	left: 20px;
-	width: 45px;
-	height: 45px;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	cursor: pointer;
-	border: 3px solid white;
-	border-radius: 20px;
-	background-color: var(--background);
-}
-
-.openMenu .bars {
-	width: 70%;
-	height: 70%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-}
-
-.openMenu .bars div {
-	background: white;
-	width: 100%;
-	height: 13%;
-}
-
-/* -------------------------- */
-/* -------------------------- -------------------------- */
-
-#menuCheckbox {
-	display: none;
-}
-
-#menuCheckbox:checked+.menu {
-	left: 0;
-}
-
-/* -------------------------- side bar */
-/* -------------------------- */
-
-/* container */
-.menu {
-	position: fixed;
-	box-sizing: border-box;
-	top: 0;
-	bottom: 0;
-	left: -280px;
-	width: 280px;
-
-	z-index: 1;
-
-	padding: 100px 20px 20px;
-
-	background-color: var(--blue);
-	color: white;
-	
-	transition: 0.5s;
-}
-
-@media (max-width: 500px)
-{
-	.menu{
-		left: -230px;
-		width: 230px;
-		
-		background-color: transparent;
-		backdrop-filter: blur(100px);
-	}
-}
-
-/* close button ==> X */
-.menu .closebtn {
-	position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 35px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.menu p{
-	font-size: 40px;
-	font-weight: bold;
-}
-/* content container */
-#wheelsList {
-	word-break: break-word;
-
-	list-style-type: none;
-	padding-left: 0;
-}
-
-.wheelEntryContainer {
-	padding: 12px 0;
-	border-bottom: 1px solid white;
-}
-
-.wheelEntry {
-	cursor: pointer;
-}
-
-.wheelEntry:hover {
-	border-left: 4px solid;
-    border-radius: 15px;
-    padding: 5px 15px;
-
-	transition:  0.3s;
-}
-
-/* -------------------------- */
-/* -------------------------- -------------------------- */
+/*------------------ error bar in create wheel tabe */
 
 .errorPopupContainer {
 	position: fixed;
@@ -352,6 +380,16 @@ body {
 	justify-content: center;
 
 	animation: errorPopupAnim 0.5s;
+}
+
+@keyframes errorPopupAnim {
+	from {
+		bottom: -50px;
+	}
+
+	to {
+		bottom: 20px;
+	}
 }
 
 .errorPopup {
@@ -382,12 +420,27 @@ body {
 	text-decoration: underline;
 }
 
-@keyframes errorPopupAnim {
-	from {
-		bottom: -50px;
-	}
+/* ---------------------------------------------- */
+/* ------------------- footer ------------------- */
+/* ---------------------------------------------- */
 
-	to {
-		bottom: 20px;
-	}
+
+.copyRight {
+	text-align: center;
+	padding: 10px;
+	background-color: #0000009e;
+	color: white;
+	font-size: 15px;
+	border-radius: 10px 10px 0 0;
+}
+
+.copyRight a {
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+
+.copyRight a:hover{
+	color: #3a86ff;
 }

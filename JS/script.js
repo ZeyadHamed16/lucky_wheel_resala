@@ -11,6 +11,8 @@ var entryList = document.querySelector("#entryList");
 var addEntryButton = document.querySelector("#addEntry");
 var entryItemTemplate = document.querySelector("#entryItemTemplate");
 
+var closeAndOpenSideMenu = document.getElementById("sideMenu");
+
 addEntryButton.onclick = function () {
 	createEntry();
 }
@@ -54,8 +56,6 @@ var landingEntryText = document.querySelector("#landingEntry");
 
 var wheelsList = document.querySelector("#wheelsList");
 var wheelEntryTemplate = document.querySelector("#wheelEntryTemplate");
-
-var menuCheckbox = document.querySelector("#menuCheckbox");
 
 // ------------------------ colors in the wheel ------------------------ 
 var theme = ["#ffbe0b", "#fb5607", "#ff006e", "#3a86ff"];
@@ -125,7 +125,7 @@ function createMenuWheelList() {
 		text.innerText = _wheel;
 		text.onclick = (function (w) {
 			return () => {
-				menuCheckbox.checked = false;
+				closeAndOpenSideMenu.style.left = "-280px";
 				gotoWheelPage(w);
 			}
 		})(_wheel);
@@ -137,7 +137,8 @@ function createMenuWheelList() {
 	var text = clone.querySelectorAll(".wheelEntry")[0];
 	text.innerText = "+ Create wheel";
 	text.onclick = function () {
-		menuCheckbox.checked = false;
+		closeAndOpenSideMenu.style.left = "-280px";
+
 		gotoCreatePage();
 	}
 
@@ -370,19 +371,13 @@ function clearChildren(parent) {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-// ------------------------ Hamburger menu animated ------------------------ 
-function toggleSwitch(x) {
-	x.classList.toggle("change");
+// ------------------------ side menu ------------------------ 
+function openNav() {
+	closeAndOpenSideMenu.style.left = "0";
 }
+
+function closeNav() {
+	closeAndOpenSideMenu.style.left = "-280px";
+}
+
 // ------------------------ ------------------------ ------------------------ 
