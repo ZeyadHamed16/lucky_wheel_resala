@@ -282,10 +282,10 @@ body {
 
 	padding: 100px 20px 20px;
 
-	backdrop-filter: blur(100px);
-
+	background-color: var(--blue);
+	
 	color: white;
-
+	
 	transition: 0.5s;
 }
 
@@ -294,7 +294,9 @@ body {
 	.menu{
 		left: -230px;
 		width: 230px;
-	
+		
+		background-color: transparent;
+		backdrop-filter: blur(100px);
 	}
 }
 
