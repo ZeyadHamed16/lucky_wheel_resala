@@ -5,12 +5,10 @@ wheelPage.classList.add("hidden");
 createPage.classList.add("hidden");
 
 var errorTemplate = document.querySelector("#errorTemplate");
-
 var wheelNameInput = document.querySelector("#wheelName");
 var entryList = document.querySelector("#entryList");
 var addEntryButton = document.querySelector("#addEntry");
 var entryItemTemplate = document.querySelector("#entryItemTemplate");
-
 var closeAndOpenSideMenu = document.getElementById("sideMenu");
 
 addEntryButton.onclick = function () {

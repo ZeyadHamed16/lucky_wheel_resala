@@ -15,13 +15,14 @@
 body,
 html {
 	background: var(--background);
-	cursor: context-menu
+	cursor: context-menu;
+	/* box-sizing: border-box; */
+	/* overflow: hidden; */
 }
 
 body {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
-	/* overflow: hidden; */
 }
 
 /* --------------------------------------------------------------- */
@@ -345,11 +346,11 @@ body {
 
 #createWheelButton,
 #spin {
+	background: none;
+	color: white;
+	
 	border: 5px solid white;
 	border-radius: 15px;
-
-	color: white;
-	background: none;
 
 	font-size: 42px;
 	font-weight: bold;
@@ -424,14 +425,14 @@ body {
 /* ------------------- footer ------------------- */
 /* ---------------------------------------------- */
 
-
 .copyRight {
 	text-align: center;
 	padding: 10px;
 	background-color: #0000009e;
 	color: white;
 	font-size: 15px;
-	border-radius: 10px 10px 0 0;
+	border-radius: 40px;
+	margin: 15px;
 }
 
 .copyRight a {
@@ -441,6 +442,6 @@ body {
 	letter-spacing: 2px;
 }
 
-.copyRight a:hover{
+.copyRight a:hover {
 	color: #3a86ff;
 }
