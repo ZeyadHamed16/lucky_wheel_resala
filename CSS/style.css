@@ -93,6 +93,7 @@ body {
 		width: 230px;
 
 		background-color: transparent;
+		-webkit-backdrop-filter: blur(100bx);
 		backdrop-filter: blur(100px);
 	}
 }
@@ -348,7 +349,7 @@ body {
 #spin {
 	background: none;
 	color: white;
-	
+
 	border: 5px solid white;
 	border-radius: 15px;
 
