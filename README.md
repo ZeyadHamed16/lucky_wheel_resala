@@ -1,6 +1,6 @@
 # Lucky Wheel
 
-**L I N K** ---> https://zeyadhamed16.github.io/lucky_wheel_resala/
+**L I N K** ---> [https://zeyadhamed16.github.io/lucky_wheel_resala/](https://zeyadhamed16.github.io/Lucky-Wheel-Resala/)
 
 ---
 
